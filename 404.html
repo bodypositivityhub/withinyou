@@ -1,3 +1,5 @@
 <script>
-  window.location.href = "/withinyou/#" + window.location.pathname;
+  if (location.pathname === "/withinyou/") {
+    location.replace("/withinyou/#/");
+  }
 </script>
