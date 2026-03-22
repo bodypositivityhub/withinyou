@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Calming sage green palette */
+    --background: 45 30% 98%;
+    --foreground: 160 15% 20%;
+
+    --card: 45 40% 99%;
+    --card-foreground: 160 15% 20%;
+
+    --popover: 45 40% 99%;
+    --popover-foreground: 160 15% 20%;
+
+    /* Sage green primary */
+    --primary: 158 35% 45%;
+    --primary-foreground: 45 40% 99%;
+
+    /* Warm cream secondary */
+    --secondary: 40 35% 94%;
+    --secondary-foreground: 160 15% 25%;
+
+    --muted: 45 20% 92%;
+    --muted-foreground: 160 10% 45%;
+
+    /* Soft coral accent */
+    --accent: 15 70% 65%;
+    --accent-foreground: 45 40% 99%;
+
+    /* Warm yellow for CTAs */
+    --cta: 45 90% 60%;
+    --cta-foreground: 160 15% 20%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 45 40% 99%;
+
+    --border: 45 25% 88%;
+    --input: 45 25% 88%;
+    --ring: 158 35% 45%;
+
+    --radius: 1rem;
+
+    /* Custom properties */
+    --gradient-hero: linear-gradient(135deg, hsl(158 35% 92%) 0%, hsl(45 35% 96%) 50%, hsl(15 40% 95%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(45 40% 99%) 0%, hsl(45 30% 97%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(160 15% 20% / 0.08);
+    --shadow-card: 0 8px 32px -8px hsl(160 15% 20% / 0.1);
+    --shadow-glow: 0 0 40px -10px hsl(158 35% 45% / 0.25);
+
+    --sidebar-background: 45 30% 98%;
+    --sidebar-foreground: 160 15% 20%;
+    --sidebar-primary: 158 35% 45%;
+    --sidebar-primary-foreground: 45 40% 99%;
+    --sidebar-accent: 40 35% 94%;
+    --sidebar-accent-foreground: 160 15% 25%;
+    --sidebar-border: 45 25% 88%;
+    --sidebar-ring: 158 35% 45%;
+  }
+
+  .dark {
+    --background: 160 20% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 160 18% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 160 18% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 158 40% 55%;
+    --primary-foreground: 160 20% 8%;
+
+    --secondary: 160 15% 18%;
+    --secondary-foreground: 45 30% 90%;
+
+    --muted: 160 15% 18%;
+    --muted-foreground: 45 20% 65%;
+
+    --accent: 15 60% 60%;
+    --accent-foreground: 160 20% 8%;
+
+    --cta: 45 85% 55%;
+    --cta-foreground: 160 20% 8%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 45 30% 95%;
+
+    --border: 160 15% 20%;
+    --input: 160 15% 20%;
+    --ring: 158 40% 55%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(160 20% 12%) 0%, hsl(160 18% 10%) 50%, hsl(160 15% 8%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(160 18% 12%) 0%, hsl(160 20% 10%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px -10px hsl(158 40% 55% / 0.3);
+
+    --sidebar-background: 160 20% 8%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 158 40% 55%;
+    --sidebar-primary-foreground: 160 20% 8%;
+    --sidebar-accent: 160 15% 18%;
+    --sidebar-accent-foreground: 45 30% 90%;
+    --sidebar-border: 160 15% 20%;
+    --sidebar-ring: 158 40% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
